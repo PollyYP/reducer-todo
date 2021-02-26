@@ -6,7 +6,7 @@ export default function TodoList(props) {
     <div className="todo-container">
       <ul className="todo-list">
         {props.todoList.map((todo) => (
-          <Todo text={todo} />
+          <Todo list={todo} />
         ))}
       </ul>
     </div>

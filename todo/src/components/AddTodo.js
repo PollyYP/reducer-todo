@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import actions from "../actions/addTodoActions";
 
 export default function AddTodo(props) {
   const [todoInput, setTodoInput] = useState("");
@@ -9,9 +10,7 @@ export default function AddTodo(props) {
 
   const addNewTodo = (event) => {
     event.preventDefault();
-    props.setTodoList((newTodo) => {
-      return [...newTodo, todoInput];
-    });
+    props.setTodoList(actions.addTodo(todoInput));
     setTodoInput("");
   };
 
