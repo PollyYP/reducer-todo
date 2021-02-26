@@ -3,4 +3,7 @@ export default {
   addTodo: (todoInput) => {
     return { type: "ADD_TODO", payload: todoInput };
   },
+  toggleCompleted: () => {
+    return { type: "TOGGLE_COMPLETED" };
+  },
 };

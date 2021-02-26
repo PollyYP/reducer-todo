@@ -10,7 +10,7 @@ export default function AddTodo(props) {
 
   const addNewTodo = (event) => {
     event.preventDefault();
-    props.setTodoList(actions.addTodo(todoInput));
+    props.dispatch(actions.addTodo(todoInput));
     setTodoInput("");
   };
 
@@ -26,6 +26,10 @@ export default function AddTodo(props) {
         />
         <button type="submit" className="todo-button" onClick={addNewTodo}>
           <i className="fas fa-plus-square"></i>
+        </button>
+        <button className="trash-btn">
+          <i className="fas fa-trash"></i>
+          &nbsp; &nbsp; Clear completed
         </button>
       </form>
     </div>
