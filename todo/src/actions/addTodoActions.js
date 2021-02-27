@@ -3,7 +3,7 @@ export default {
   addTodo: (todoInput) => {
     return { type: "ADD_TODO", payload: todoInput };
   },
-  toggleCompleted: () => {
-    return { type: "TOGGLE_COMPLETED" };
+  toggleCompleted: (id) => {
+    return { type: "TOGGLE_COMPLETED", payload: id };
   },
 };

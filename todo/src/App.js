@@ -6,16 +6,26 @@ import Todos from "./components/Todos";
 import "./App.css";
 
 function App() {
-  const initialState = { todos: [], completed: false };
+  const initialState = {
+    todoList: [
+      {
+        todo: "Learn about reducers",
+        completed: false,
+        id: 3892987589,
+      },
+    ],
+  };
+
   const [state, dispatch] = useReducer(addTodoReducer, initialState);
+  //console.log(state.todoList);
 
   return (
     <div className="App">
       <h1>Todo List</h1>
       <AddTodo dispatch={dispatch} />
       <Todos
-        todos={state.todos}
-        completed={state.completed}
+        todoList={state.todoList}
+        completed={state.todoList.completed}
         dispatch={dispatch}
       />
     </div>

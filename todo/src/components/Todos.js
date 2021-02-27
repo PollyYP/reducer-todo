@@ -5,18 +5,17 @@ export default function Todos(props) {
   return (
     <div className="todo-container">
       <ul className="todo-list">
-        {props.todos.map((todo, index) => (
+        {props.todoList.map((item, index) => (
           <div className="todo">
             <li
-              id={Date.now()}
               key={index}
-              className={`todo-item ${props.completed && "completed"}`}
+              className={`todo-item ${item.completed && "completed"}`}
             >
-              {todo}
+              {item.todo}
             </li>
             <button
               className="complete-btn"
-              onClick={() => props.dispatch(actions.toggleCompleted())}
+              onClick={() => props.dispatch(actions.toggleCompleted(item.id))}
             >
               <i className="fas fa-check"></i>
             </button>
