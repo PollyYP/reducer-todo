@@ -22,6 +22,16 @@ const addTodoReducer = (state, action) => {
         ],
       };
 
+    case "DELETE_COMPLETED":
+      return {
+        ...state,
+        todoList: [
+          ...state.todoList.filter((item) => {
+            return !item.completed;
+          }),
+        ],
+      };
+
     default:
       return state;
   }

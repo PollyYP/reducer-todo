@@ -6,4 +6,7 @@ export default {
   toggleCompleted: (id) => {
     return { type: "TOGGLE_COMPLETED", payload: id };
   },
+  deleteCompleted: () => {
+    return { type: "DELETE_COMPLETED" };
+  },
 };

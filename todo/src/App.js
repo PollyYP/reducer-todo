@@ -7,13 +7,7 @@ import "./App.css";
 
 function App() {
   const initialState = {
-    todoList: [
-      {
-        todo: "Learn about reducers",
-        completed: false,
-        id: 3892987589,
-      },
-    ],
+    todoList: [],
   };
 
   const [state, dispatch] = useReducer(addTodoReducer, initialState);
@@ -22,7 +16,7 @@ function App() {
   return (
     <div className="App">
       <h1>Todo List</h1>
-      <AddTodo dispatch={dispatch} />
+      <AddTodo completed={state.todoList.completed} dispatch={dispatch} />
       <Todos
         todoList={state.todoList}
         completed={state.todoList.completed}

@@ -14,6 +14,11 @@ export default function AddTodo(props) {
     setTodoInput("");
   };
 
+  const deleteCompletedTodo = (event) => {
+    event.preventDefault();
+    props.dispatch(actions.deleteCompleted());
+  };
+
   return (
     <div>
       <form>
@@ -27,7 +32,7 @@ export default function AddTodo(props) {
         <button type="submit" className="todo-button" onClick={addNewTodo}>
           <i className="fas fa-plus-square"></i>
         </button>
-        <button className="trash-btn">
+        <button className="trash-btn" onClick={deleteCompletedTodo}>
           <i className="fas fa-trash"></i>
           &nbsp; &nbsp; Clear completed
         </button>
